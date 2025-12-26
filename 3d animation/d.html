@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ✅ Important for scaling -->
+    <title>My Best Memories</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .joke {
+            position: absolute;
+            top: 2.5%;
+            width: 100%;
+            font-size: 15px;
+            text-align: center;
+            color: rgba(184, 127, 127, 1);
+            z-index: 3;
+        }
+
+        .banner {
+            width: 400%;
+            height: 100dvh;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+            background: url('images/IMG_20231210_120139 - Copy.jpg') no-repeat center center;
+            background-size: cover;
+        }
+
+        .banner .slider {
+            position: absolute;
+            width: 160px; /* ✅ Forced mobile size */
+            height: 200px;
+            top: 25%;
+            left: calc(50% - 80px);
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            animation: autoRun 20s linear infinite;
+            z-index: 2;
+        }
+
+        .banner .slider .item {
+            position: absolute;
+            inset: 0;
+            transform: 
+                rotateY(calc((var(--position) - 1) * (360deg / var(--quantity))))
+                translateZ(300px); /* ✅ Forced mobile depth */
+        }
+
+        .banner .slider .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .photo-detail {
+            color: #000;
+            font-size: 16px;
+            background-color: rgba(216, 197, 235, 0.9);
+            padding: 8px;
+            border-radius: 50px;
+            margin-top: 10px;
+        }
+
+        .banner .content {
+            width: 100%;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            text-align: center;
+            color: #fff;
+            text-shadow: 0 10px 20px #000;
+        }
+
+        .banner .content h1 {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 2.5em; /* ✅ Smaller font */
+            text-shadow: 0 10px 20px #abeb61;
+        }
+
+        .banner .content h2 {
+            font-size: 1.5em;
+        }
+
+        @keyframes autoRun {
+            from {
+                transform: perspective(1000px) rotateX(-1deg) rotateY(0deg);
+            }
+            to {
+                transform: perspective(1000px) rotateX(-1deg) rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="joke"><h1>WELCOME TO MY PAGE</h1></div>
+        <div class="slider" style="--quantity: 12">
+            <div class="item" style="--position: 1"><img src="images/IMG_20231210_120139 - Copy.jpg" alt=""><p class="photo-detail">Photo 1: A peaceful landscape.</p></div>
+            <div class="item" style="--position: 2"><img src="images/IMG_20231210_140923.jpg" alt=""><p class="photo-detail">Photo 2: A peaceful landscape.</p></div>
+            <div class="item" style="--position: 3"><img src="images/IMG_20231210_142501 - Copy.jpg" alt=""><p class="photo-detail">Photo 3: A peaceful landscape.</p></div>
+            <div class="item" style="--position: 4"><img src="images/IMG_20231210_143507.jpg" alt=""><p class="photo-detail">Photo 4: A peaceful landscape.</p></div>
+            <div class="item" style="--position: 5"><img src="images/IMG_20231210_143432.jpg" alt=""><p class="photo-detail">Photo 5: A peaceful landscape.</p></div>
+            <div class="item" style="--position: 6"><img src="images/IMG_20231210_143432.jpg" alt=""><p class="photo-detail">Photo 6: A peaceful landscape.</p></div>
+            <div class="item" style="--position: 7"><img src="images/IMG_20231210_142501 - Copy.jpg" alt=""><p class="photo-detail">Photo 7: A peaceful landscape.</p></div>
+            <div class="item" style="--position: 8"><img src="images/IMG_20231210_170547.jpg" alt=""><p class="photo-detail">Photo 8: A peaceful landscape.</p></div>
+            <div class="item" style="--position: 9"><img src="images/IMG_20231210_143432.jpg" alt=""><p class="photo-detail">Photo 9: A peaceful landscape.</p></div>
+            <div class="item" style="--position: 10"><img src="images/IMG_20231210_140923.jpg" alt=""><p class="photo-detail">Photo 10: A peaceful landscape.</p></div>
+            <div class="item" style="--position: 11"><img src="images/IMG_20231210_142501 - Copy.jpg" alt=""><p class="photo-detail">Photo 11: A peaceful landscape.</p></div>
+            <div class="item" style="--position: 12"><img src="images/IMG_20231210_170547.jpg" alt=""><p class="photo-detail">Photo 12: A peaceful landscape.</p></div>
+        </div>
+
+        <div class="content">
+            
+                <h2>Shot by Biman</h2>
+                <p>This is my aesthetic photography.</p>
+            </div>
+            </div>
+</body>
+</html>

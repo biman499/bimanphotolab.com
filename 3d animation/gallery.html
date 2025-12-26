@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gallery — Biman_Photo_Lab</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gallery.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="logo" href="index.html">Biman_Photo_Lab</a>
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="gallery.html">Gallary</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact Us</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container gallery-page">
+      <h1>Gallery</h1>
+      <p class="intro">A curated collection of photos — 25+ images. Click any image to view full size.</p>
+
+      <section class="gallery-grid">
+    
+        <a class="gallery-item" href="images/1725711287089.jpg" target="_blank"><img src="images/1725711287089.jpg" alt="P-1"></a>
+        <a class="gallery-item" href="images/1738920215522.jpg" target="_blank"><img src="images/1738920215522.jpg" alt="P-2"></a>
+        <a class="gallery-item" href="images/1746795190127.jpg" target="_blank"><img src="images/1746795190127.jpg" alt="P-3"></a>
+        <a class="gallery-item" href="images/1748087756869.jpg" target="_blank"><img src="images/1748087756869.jpg" alt="P-4"></a>
+        <a class="gallery-item" href="images/IMG_20230917_144202 - Copy.jpg" target="_blank"><img src="images/IMG_20230917_144202 - Copy.jpg" alt="P-5"></a>
+        <a class="gallery-item" href="images/IMG_20231210_120139 - Copy.jpg" target="_blank"><img src="images/IMG_20231210_120139 - Copy.jpg" alt="P-6"></a>
+        <a class="gallery-item" href="images/IMG_20231210_140923.jpg" target="_blank"><img src="images/IMG_20231210_140923.jpg" alt="P-7"></a>
+        <a class="gallery-item" href="images/IMG_20231210_143432 - Copy.jpg" target="_blank"><img src="images/IMG_20231210_143432 - Copy.jpg" alt="P-8"></a>
+        <a class="gallery-item" href="images/IMG_20231210_143432.jpg" target="_blank"><img src="images/IMG_20231210_143432.jpg" alt="P-9"></a>
+        <a class="gallery-item" href="images/IMG_20231210_143507 - Copy.jpg" target="_blank"><img src="images/IMG_20231210_143507 - Copy.jpg" alt="P-10"></a>
+        <a class="gallery-item" href="images/IMG_20231210_143507.jpg" target="_blank"><img src="images/IMG_20231210_143507.jpg" alt="P-11"></a>
+        <a class="gallery-item" href="images/IMG_20231210_170547.jpg" target="_blank"><img src="images/IMG_20231210_170547.jpg" alt="P-12"></a>
+        <a class="gallery-item" href="images/IMG_20231210_143507 - Copy.jpg" target="_blank"><img src="images/IMG_20231210_143507 - Copy.jpg" alt="P-13"></a>
+        <a class="gallery-item" href="images/IMG_20231210_143507.jpg" target="_blank"><img src="images/IMG_20231210_143507.jpg" alt="P-14"></a>
+        <a class="gallery-item" href="images/IMG_20231210_170547.jpg" target="_blank"><img src="images/IMG_20231210_170547.jpg" alt="15"></a>
+        <a class="gallery-item" href="images/1725711287089.jpg" target="_blank"><img src="images/1725711287089.jpg" alt="P-16"></a>
+        <a class="gallery-item" href="images/1738920215522.jpg" target="_blank"><img src="images/1738920215522.jpg" alt="P-17"></a>
+        <a class="gallery-item" href="images/1746795190127.jpg" target="_blank"><img src="images/IMG_20231210_170547.jpg" alt="P-18"></a>
+        <a class="gallery-item" href="images/1748087756869.jpg" target="_blank"><img src="images/1746795190127.jpg" alt="P-18"></a>
+        <a class="gallery-item" href="images/IMG_20230917_144202 - Copy.jpg" target="_blank"><img src="images/IMG_20230917_144202 - Copy.jpg" alt="P-19"></a>
+        <a class="gallery-item" href="images/IMG_20231210_120139 - Copy.jpg" target="_blank"><img src="images/IMG_20231210_120139 - Copy.jpg" alt="P-20"></a>
+        <a class="gallery-item" href="images/IMG_20231210_140923.jpg" target="_blank"><img src="images/IMG_20231210_140923.jpg" alt="P-21"></a>
+        <a class="gallery-item" href="images/IMG_20231210_143432 - Copy.jpg" target="_blank"><img src="images/IMG_20231210_143432 - Copy.jpg" alt="P-22"></a>
+        
+        <a class="gallery-item" href="images/IMG_20231210_143432.jpg" target="_blank"><img src="images/Frame 18.jpg" alt="P-23"></a>
+
+      </section>
+
+      <script>
+        document.querySelectorAll('.gallery-item').forEach((a, i) => {
+          const img = a.querySelector('img');
+          const caption = (img && img.alt && img.alt.trim() !== '') ? img.alt : 'Image ' + (i + 1);
+          a.setAttribute('data-caption', caption);
+        });
+      </script>
+      <div class="col"><p class="note">Tip: click any image to view it in the built-in lightbox.</p></div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2025 Biman_Photo_Lab — All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
