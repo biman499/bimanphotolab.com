@@ -22,19 +22,58 @@
 
     <main class="container contact-section">
       <h1>Contact Me</h1>
-      <p class="contact-intro">Have a question or want to work together? Send a message below or email me at <a href="mailto:you@example.com">biman4998@gmail.com</a>.Conatact my mobile no 8918291690</p>
+      <p class="contact-intro">Have a question or want to work together? Send a message below or email me at <a href="mailto:biman4998@gmail.com">biman4998@gmail.com</a>. Contact my mobile no 8918291690</p>
 
-      <form class="contact-form" action="mailto:biman4998@gmail.com" method="post" enctype="text/plain">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="Your email" required>
-        <textarea name="message" rows="6" placeholder="Your message" required></textarea>
+      <form class="contact-form" id="contactForm">
+        <input type="text" name="name" id="name" placeholder="Your name" required>
+        <input type="email" name="email" id="email" placeholder="Your email" required>
+        <textarea name="message" id="message" rows="6" placeholder="Your message" required></textarea>
         <div class="actions">
           <button type="submit">Send Message</button>
           <a href="index.html" class="back-link">← Back to Home</a>
         </div>
+        <p id="formStatus" style="margin-top: 1rem; text-align: center; font-weight: bold;"></p>
       </form>
     </main>
 
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+      (function(){
+          emailjs.init({
+            publicKey: "PUcL8QBCw8wnBqnHd", // Your EmailJS Public Key
+          });
+      })();
+    </script>
+    <script>
+      document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent default form submission
+        
+        const status = document.getElementById('formStatus');
+        const btn = this.querySelector('button');
+        
+        status.textContent = "Sending...";
+        status.style.color = "white";
+        btn.disabled = true;
+
+        const serviceID = 'service_dl2hqnh';
+        const templateID = 'template_pv7ahxb';
+
+        emailjs.sendForm(serviceID, templateID, this)
+          .then(() => {
+            status.textContent = "Message sent successfully!";
+            status.style.color = "#4CAF50"; // Green
+            this.reset();
+          }, (err) => {
+            status.textContent = "Error sending message. Please try again.";
+            status.style.color = "#FF5252"; // Red
+            console.error('EmailJS Error:', err);
+          }).finally(() => {
+            btn.disabled = false;
+          });
+      });
+    </script>
     <footer class="site-footer">
       <div class="container">
         <p>© 2025 Biman_Photo_Lab — All rights reserved.</p>
